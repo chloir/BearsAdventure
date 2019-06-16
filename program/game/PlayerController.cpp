@@ -9,6 +9,7 @@ extern int playerSprite2;
 extern int playerSprite1;
 extern int friendlyBear;
 int playerLife = 3;
+bool playerAlive = false;
 
 int player_x = 80;
 int player_y = 80;
@@ -25,10 +26,16 @@ void DrawPlayer() {
 	switch(playerLife){
 	case 3:
 		DrawGraph(player_x, player_y, playerSprite3, true);
+		break;
 	case 2:
 		DrawGraph(player_x, player_y, playerSprite2, true);
+		break;
 	case 1:
 		DrawGraph(player_x, player_y, playerSprite1, true);
+		break;
+	case 0:
+		playerAlive = false;
+		break;
 	}
 
 	// プレイヤーに仲間を連結
@@ -42,6 +49,7 @@ void DrawPlayer() {
 }
 
 void AddBears() { bears++; }
+int GetBears() { return bears; }
 void ChangePlayerLife(bool Add){
 	if(Add){
 		playerLife++;
@@ -49,3 +57,5 @@ void ChangePlayerLife(bool Add){
 		playerLife--;
 	}
 }
+void SetPlayerAlive(bool status) { playerAlive = status; }
+bool GetPlayerAlive() { return playerAlive; }

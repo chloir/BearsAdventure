@@ -19,6 +19,7 @@ void BattleInitialize();
 int GetBattleStat();
 void AddBears();
 int GetEnemyIndex();
+int GetBears();
 void ChangePlayerLife(bool Add);
 void SetResult(bool status) { isResult = status; }
 bool GetIsResult() { return isResult; }
@@ -50,7 +51,9 @@ void BattleResultScene() {
 
 	if (frames > resultLifeTime) {
 		if (GetEnemyIndex() == 1 && GetBattleStat() == 0) {
-			AddBears();
+			if (GetBears() < 4) {
+				AddBears();
+			}
 		}
 		if (GetEnemyIndex() == 0 && GetBattleStat() == 1) {
 			ChangePlayerLife(false);

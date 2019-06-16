@@ -15,9 +15,9 @@ int points = 0;
 int enemytimer = 0;
 
 //プロトタイプ宣言
-void function();
 void gameplay();
 void titlescene();
+void ResultScreen();
 void debugger();
 
 //=============================================================================
@@ -40,7 +40,7 @@ int game_main()
 			break;
 
 		case 2:
-			function();
+			ResultScreen();
 			break;
 	}
 
@@ -48,4 +48,6 @@ int game_main()
 
 	return 0 ;
 }
+
+void ChangeGameState(int state) { gamestate = state; }
 
