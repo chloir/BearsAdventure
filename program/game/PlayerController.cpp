@@ -18,6 +18,9 @@ int y_difference = 120;
 int bears = 0;
 
 void DrawPlayer() {
+	if (playerLife > 3) {
+		playerLife = 3;
+	}
 
 	switch(playerLife){
 	case 3:

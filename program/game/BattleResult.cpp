@@ -55,6 +55,9 @@ void BattleResultScene() {
 		if (GetEnemyIndex() == 0 && GetBattleStat() == 1) {
 			ChangePlayerLife(false);
 		}
+		if (GetEnemyIndex() == 2 && GetBattleStat() == 0) {
+			ChangePlayerLife(true);
+		}
 		isResult = false;
 		resultInit = false;
 		SetEnemyAlive(false);

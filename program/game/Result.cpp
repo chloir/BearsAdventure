@@ -7,7 +7,7 @@ extern int points;
 extern int gamestate;
 
 // ƒŠƒUƒ‹ƒg‰æ–Ê
-void function() {
+void ResultScreen() {
 
 	DrawStringEx(300, 400, 0x00ffffff, "Result");
 	DrawStringEx(300, 500, 0x00ffffff, "¡‰ñ‚ÌŒ‹‰Ê:%d", points);
