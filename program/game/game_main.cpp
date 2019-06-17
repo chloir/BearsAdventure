@@ -10,15 +10,13 @@ bool gameplayed = false;
 // 0:タイトル, 1:ゲーム画面, 2:リザルト画面
 int gamestate = 0;
 
-int points = 0;
-
 int enemytimer = 0;
 
 //プロトタイプ宣言
 void gameplay();
 void titlescene();
 void ResultScreen();
-void debugger();
+void CallDebugSystem();
 
 //=============================================================================
 // name... game_main
@@ -28,8 +26,6 @@ void debugger();
 //=============================================================================
 int game_main()
 {
-	SetFontSize(40);
-
 	switch (gamestate) {
 		case 0:
 			titlescene();
@@ -44,7 +40,7 @@ int game_main()
 			break;
 	}
 
-	debugger();
+	CallDebugSystem();
 
 	return 0 ;
 }

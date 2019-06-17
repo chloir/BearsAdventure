@@ -27,7 +27,7 @@ bool GetIsResult() { return isResult; }
 
 void BattleResultScene() {
 	if (resultInit == false) {
-		resultLifeTime = 240;
+		resultLifeTime = 160;
 		frames = 0;
 		resultInit = true;
 	}
@@ -74,5 +74,5 @@ void StringDrawer(std::string str, int counter) {
 		message_length = str.length();
 	}
 	std::string draw_str = str.substr(0, message_length);
-	DrawStringEx(500, 640, 0x000000, "%s", draw_str.c_str());
+	DrawStringEx(450, 640, 0x000000, "%s", draw_str.c_str());
 }

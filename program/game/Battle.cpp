@@ -3,9 +3,6 @@
 #include <random>
 #include <time.h>
 
-#define INC 1
-
-#if INC
 enum hand {
 	rock,
 	scisors,
@@ -198,4 +195,3 @@ void battle() {
 }
 
 int GetBattleStat() { return battlestat; }
-#endif

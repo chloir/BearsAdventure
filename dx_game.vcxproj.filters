@@ -67,9 +67,6 @@
     <ClCompile Include="program\game\BGController.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
-    <ClCompile Include="program\game\EntityPopper.cpp">
-      <Filter>program\game</Filter>
-    </ClCompile>
     <ClCompile Include="program\game\EnemyDrawer.cpp">
       <Filter>program\game</Filter>
     </ClCompile>

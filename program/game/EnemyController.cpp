@@ -4,22 +4,23 @@
 #include <time.h>
 
 extern bool inbattle;
-
-extern int points;
-
-extern int bears;
 extern int enemytimer;
-
 extern int enemy_x;
 
+bool EcontInit = false;
 bool enemyalive = false;
 
 int enemyindex = 0;
 std::mt19937 mt01(time(0));
 
-int enemydelay = 120;
+int enemydelay = 60;
 
 void enemypopper() {
+	if (EcontInit) {
+		enemyalive = false;
+		EcontInit = true;
+	}
+
 	if (enemyalive == false) {
 		enemytimer++;
 	}

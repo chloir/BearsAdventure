@@ -32,12 +32,14 @@ void ChangeGameState(int state);
 bool GetPlayerAlive();
 
 void gameplay() {
+	SetFontSize(40);
+
 	if (!timerInit) {
 		startTime = time(0);
 		timerInit = true;
 	}
 
-	if (GetPlayerAlive()) {
+	if (!GetPlayerAlive()) {
 		ChangeGameState(2);
 	}
 	
@@ -46,13 +48,16 @@ void gameplay() {
 	currentTime = time(0);
 	erapsedTime = currentTime - startTime;
 
+	if (erapsedTime > 60) {
+		ChangeGameState(2);
+	}
+
 	DrawBG();
 	DrawPlayer();
 
 	bool alive = GetEnemyAlive();
 	enemypopper();
 
-	// “G•`‰æ‚ÆUŒ‚(?)”»’è
 	if (alive == true) {
 		DrawEnemy(enindex, alive);
 	}
@@ -64,11 +69,8 @@ void gameplay() {
 	if (GetIsResult() == true) {
 		BattleResultScene();
 	}
-
-	if (IsKeyDownTrigger(KEY_INPUT_SPACE)) {
-		ChangeGameState(2);
-	}
 }
 
 void SetInBattle(bool status) { inbattle = status; }
 int GetCurrentT() { return currentTime; }
+int GetErapsedT() { return erapsedTime; }
