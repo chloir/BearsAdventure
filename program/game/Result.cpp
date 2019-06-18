@@ -15,23 +15,35 @@ extern bool PcontInit;
 extern bool timerInit;
 extern bool EdrawInit;
 extern bool EcontInit;
+extern bool Tfade;
+extern bool Tinit;
 
 int Rframes = 0;
+
+bool Rfade = false;
+bool Rinit = false;
 
 int GetBears();
 bool GetPlayerAlive();
 void ChangeGameState(int state);
-
+void FadeOut(int state);
 
 void GameInitializer() {
 	PcontInit = false;
 	timerInit = false;
 	EdrawInit = false;
 	EcontInit = false;
+	Tfade = false;
+	Tinit = false;
 }
 
 // ƒŠƒUƒ‹ƒg‰æ–Ê
 void ResultScreen() {
+	if (!Rinit) {
+		SetDrawBright(255, 255, 255);
+		Rinit = true;
+	}
+
 	if (Rframes > 60)
 	{
 		Rframes = 0;
@@ -82,6 +94,10 @@ void ResultScreen() {
 
 	if (IsKeyDownTrigger(KEY_INPUT_SPACE)) {
 		GameInitializer();
-		ChangeGameState(0);
+		Rfade = true;
+	}
+
+	if (Rfade) {
+		FadeOut(0);
 	}
 }

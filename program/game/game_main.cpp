@@ -16,7 +16,6 @@ int enemytimer = 0;
 void gameplay();
 void titlescene();
 void ResultScreen();
-void CallDebugSystem();
 
 //=============================================================================
 // name... game_main
@@ -39,8 +38,6 @@ int game_main()
 			ResultScreen();
 			break;
 	}
-
-	CallDebugSystem();
 
 	return 0 ;
 }

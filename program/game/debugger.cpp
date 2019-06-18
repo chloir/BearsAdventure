@@ -5,7 +5,7 @@
 #include <math.h>
 #include <random>
 
-#define DEBUG 1
+#define DEBUG 0
 
 #if DEBUG
 extern int enemytimer;
@@ -14,6 +14,7 @@ extern int battlestat;
 extern int bears;
 extern int erapsedTime;
 extern int Rframes;
+extern int Bright;
 
 extern int playerLife;
 
@@ -28,6 +29,7 @@ void debugger() {
 	DrawStringEx(10, 520, 0x00000000, "bears:%d", bears);
 	DrawStringEx(10, 460, 0x00000000, "erapsedTime:%d", erapsedTime);
 	DrawStringEx(10, 400, 0x00000000, "Rframes:%d", Rframes);
+	DrawStringEx(10, 340, 0x00000000, "Bright:%d", Bright);
 	if (IsKeyDownTrigger(KEY_INPUT_SPACE) && IsKeyDownTrigger(KEY_INPUT_LSHIFT)) {
 		debugActive = true;
 	}
@@ -49,6 +51,9 @@ void debugMode() {
 	}
 	if (IsKeyDownTrigger(KEY_INPUT_5)) {
 		ChangeGameState(2);
+	}
+	if (IsKeyDownTrigger(KEY_INPUT_6)) {
+		erapsedTime = 61;
 	}
 	if (IsKeyDownTrigger(KEY_INPUT_SPACE) && IsKeyDownTrigger(KEY_INPUT_D)) {
 		debugActive = false;

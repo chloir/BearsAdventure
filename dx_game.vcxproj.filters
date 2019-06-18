@@ -76,6 +76,9 @@
     <ClCompile Include="program\game\GraphLoader.cpp">
       <Filter>program\game</Filter>
     </ClCompile>
+    <ClCompile Include="program\game\Fader.cpp">
+      <Filter>program\game</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="program\game\game_setup.h">

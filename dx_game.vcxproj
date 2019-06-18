@@ -16,6 +16,7 @@
     <ClCompile Include="program\game\BGController.cpp" />
     <ClCompile Include="program\game\debugger.cpp" />
     <ClCompile Include="program\game\EnemyDrawer.cpp" />
+    <ClCompile Include="program\game\Fader.cpp" />
     <ClCompile Include="program\game\GraphLoader.cpp" />
     <ClCompile Include="program\game\PlayerController.cpp" />
     <ClCompile Include="program\game\Result.cpp" />

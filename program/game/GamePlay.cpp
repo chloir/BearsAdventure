@@ -19,6 +19,8 @@ int startTime = 0;
 int erapsedTime = 0;
 int currentTime = 0;
 
+bool GpFade = true;
+
 void enemypopper();
 void DrawPlayer();
 void DrawBG();
@@ -30,17 +32,19 @@ bool GetIsResult();
 void BattleResultScene();
 void ChangeGameState(int state);
 bool GetPlayerAlive();
+void FadeOut(int state);
 
 void gameplay() {
 	SetFontSize(40);
 
 	if (!timerInit) {
+		SetDrawBright(255, 255, 255);
 		startTime = time(0);
 		timerInit = true;
 	}
 
 	if (!GetPlayerAlive()) {
-		ChangeGameState(2);
+		FadeOut(2);
 	}
 	
 	int enindex = GetEnemyIndex();
@@ -49,7 +53,7 @@ void gameplay() {
 	erapsedTime = currentTime - startTime;
 
 	if (erapsedTime > 60) {
-		ChangeGameState(2);
+		FadeOut(2);
 	}
 
 	DrawBG();
